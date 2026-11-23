@@ -1,0 +1,162 @@
+{
+  "dataset": {
+    "train": 100,
+    "val": 20,
+    "test": 50,
+    "peatones_total": 423
+  },
+  "mejor_modelo_validacion": "E4_R50_4_pasos",
+  "metricas_prueba": {
+    "E0_zero_shot_COCO": {
+      "AP@0.5": 0.9755,
+      "AP@0.75": 0.9416,
+      "mAP@[.5:.95]": 0.7933,
+      "umbral": 0.95,
+      "Precision": 0.779,
+      "Recall": 1.0,
+      "F1": 0.8758,
+      "IoU medio (TP)": 0.8947,
+      "val mAP": 0.7916,
+      "params (M)": 41.7553,
+      "entrenables (M)": 0.0
+    },
+    "E1_R50_extractor_congelado": {
+      "AP@0.5": 0.9933,
+      "AP@0.75": 0.9834,
+      "mAP@[.5:.95]": 0.8255,
+      "umbral": 0.95,
+      "Precision": 0.9448,
+      "Recall": 0.9716,
+      "F1": 0.958,
+      "IoU medio (TP)": 0.9026,
+      "val mAP": 0.8087,
+      "params (M)": 41.2992,
+      "entrenables (M)": 14.4999
+    },
+    "E2_R50_finetuning": {
+      "AP@0.5": 0.9931,
+      "AP@0.75": 0.947,
+      "mAP@[.5:.95]": 0.8203,
+      "umbral": 0.95,
+      "Precision": 0.92,
+      "Recall": 0.9787,
+      "F1": 0.9485,
+      "IoU medio (TP)": 0.9047,
+      "val mAP": 0.8109,
+      "params (M)": 41.2992,
+      "entrenables (M)": 41.0768
+    },
+    "E3_MobileNetV3_finetuning": {
+      "AP@0.5": 0.993,
+      "AP@0.75": 0.9213,
+      "mAP@[.5:.95]": 0.7884,
+      "umbral": 0.9,
+      "Precision": 0.964,
+      "Recall": 0.9504,
+      "F1": 0.9571,
+      "IoU medio (TP)": 0.8924,
+      "val mAP": 0.8151,
+      "params (M)": 18.9302,
+      "entrenables (M)": 18.8713
+    },
+    "E4_R50_4_pasos": {
+      "AP@0.5": 0.9903,
+      "AP@0.75": 0.9433,
+      "mAP@[.5:.95]": 0.8149,
+      "umbral": 0.95,
+      "Precision": 0.9375,
+      "Recall": 0.9574,
+      "F1": 0.9474,
+      "IoU medio (TP)": 0.9053,
+      "val mAP": 0.816,
+      "params (M)": 41.2992,
+      "entrenables (M)": NaN
+    }
+  },
+  "tiempos_ms": {
+    "R50-FPN (E2)": {
+      "Preprocesamiento": 0.47,
+      "Backbone + FPN (compartido)": 71.99,
+      "RPN (propuestas)": 19.73,
+      "Fast R-CNN (RoI + cabeza)": 14.42,
+      "Total (ms)": 106.61,
+      "FPS": 9.38
+    },
+    "MobileNetV3-FPN (E3)": {
+      "Preprocesamiento": 0.44,
+      "Backbone + FPN (compartido)": 16.12,
+      "RPN (propuestas)": 4.39,
+      "Fast R-CNN (RoI + cabeza)": 4.41,
+      "Total (ms)": 25.36,
+      "FPS": 39.43
+    }
+  },
+  "ablacion_propuestas": {
+    "1000": {
+      "Recall@0.5": 1.0,
+      "Recall@0.7": 1.0,
+      "AR [.5:.95]": 0.7752,
+      "AP@0.5": 0.9903,
+      "mAP@[.5:.95]": 0.8149,
+      "ms/imagen": 143.1806
+    },
+    "300": {
+      "Recall@0.5": 1.0,
+      "Recall@0.7": 1.0,
+      "AR [.5:.95]": 0.7752,
+      "AP@0.5": 0.9908,
+      "mAP@[.5:.95]": 0.8159,
+      "ms/imagen": 141.5993
+    },
+    "100": {
+      "Recall@0.5": 1.0,
+      "Recall@0.7": 0.9929,
+      "AR [.5:.95]": 0.7745,
+      "AP@0.5": 0.9913,
+      "mAP@[.5:.95]": 0.8182,
+      "ms/imagen": 132.5428
+    },
+    "50": {
+      "Recall@0.5": 1.0,
+      "Recall@0.7": 0.9929,
+      "AR [.5:.95]": 0.7745,
+      "AP@0.5": 0.9843,
+      "mAP@[.5:.95]": 0.8142,
+      "ms/imagen": 128.0634
+    },
+    "20": {
+      "Recall@0.5": 1.0,
+      "Recall@0.7": 0.9716,
+      "AR [.5:.95]": 0.7617,
+      "AP@0.5": 0.9749,
+      "mAP@[.5:.95]": 0.8097,
+      "ms/imagen": 127.7466
+    },
+    "10": {
+      "Recall@0.5": 0.9716,
+      "Recall@0.7": 0.9433,
+      "AR [.5:.95]": 0.7319,
+      "AP@0.5": 0.957,
+      "mAP@[.5:.95]": 0.7972,
+      "ms/imagen": 128.1
+    }
+  },
+  "config": {
+    "n_test": 50,
+    "n_val": 20,
+    "epochs": 10,
+    "epochs_per_step_4pasos": 5,
+    "batch_size": 2,
+    "lr": 0.005,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "lr_step_frac": 0.7,
+    "lr_gamma": 0.1,
+    "min_size": 800,
+    "max_size": 1333,
+    "iou_thr": 0.5,
+    "num_workers": 2
+  },
+  "quick_run": false,
+  "device": "cuda"
+}
