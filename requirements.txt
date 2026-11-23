@@ -1,0 +1,8 @@
+# En Google Colab todas estas dependencias ya vienen instaladas.
+torch>=2.2
+torchvision>=0.17
+numpy
+pandas
+matplotlib
+jinja2          # estilos de tablas de pandas
+jupyter
