@@ -433,3 +433,8 @@ checkpoints/
 .ipynb_checkpoints/
 __pycache__/
 .venv/
+
+guiones/
+# Guiones de la presentación (solo locales)
+GUION*
+guion*
